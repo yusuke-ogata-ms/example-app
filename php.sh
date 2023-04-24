@@ -1,2 +1,3 @@
 #!/bin/sh
-bash vendor/bin/sail php -v
+bash vendor/bin/sail php "$@"
+return $?

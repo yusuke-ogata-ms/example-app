@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/sample', [\AppHttp\Controllers\Sample\IndexController::class,'show']);
+Route::get('/sample', [\App\Http\Controllers\Sample\IndexController::class,'show']);
