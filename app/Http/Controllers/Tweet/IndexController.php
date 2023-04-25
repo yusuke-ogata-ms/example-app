@@ -46,8 +46,9 @@ class IndexController extends Controller
 
     // seeder で生成したダミーのつぶやきを表示する
     public function __invoke(Request $request){
-        $tweets = Tweet::all();
+        //$tweets = Tweet::all();
         //dd($tweets);
+        $tweets = Tweet::orderBy('created_at', 'DESC')->get();
         return view('tweet.index')
             ->with('tweets', $tweets);
     }
