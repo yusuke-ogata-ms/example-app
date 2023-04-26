@@ -1,3 +1,3 @@
 #!/bin/sh
-bash vendor/bin/sail php "$@"
+docker exec ${path}-laravel.test-1 php "$@"
 return $?
