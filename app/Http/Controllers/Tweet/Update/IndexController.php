@@ -26,7 +26,7 @@ class IndexController extends Controller
 
         // 書き方２：firstOrFail() を使う
         $tweet = Tweet::where('id', $tweetId)->firstOrFail();
-        // dd($tweet);
+        // dump($tweet);
 
         return view('tweet.update')->with('tweet', $tweet);
     }
