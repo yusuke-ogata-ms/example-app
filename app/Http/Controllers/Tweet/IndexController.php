@@ -14,6 +14,9 @@ use Illuminate\Http\Request;
 // seeder で生成したダミーのつぶやきを表示する
 use App\Models\Tweet;
 
+// Service コンテナ
+use App\Services\TweetService;
+
 class IndexController extends Controller
 {
     /**
@@ -45,10 +48,17 @@ class IndexController extends Controller
     // }
 
     // seeder で生成したダミーのつぶやきを表示する
-    public function __invoke(Request $request){
+    public function __invoke(Request $request, TweetService $tweetService)
+    {
         //$tweets = Tweet::all();
         //dd($tweets);
-        $tweets = Tweet::orderBy('created_at', 'DESC')->get();
+        
+        // Service コンテナ前
+        // $tweets = Tweet::orderBy('created_at', 'DESC')->get();
+
+        // Service コンテナ化
+        $tweets = $tweetService->getTweets();
+
         return view('tweet.index')
             ->with('tweets', $tweets);
     }
