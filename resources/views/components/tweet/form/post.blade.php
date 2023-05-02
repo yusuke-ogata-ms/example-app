@@ -19,8 +19,7 @@
             rounded-md
             p-2
             "
-          placeholder="つぶやきを入力">
-        </textarea>
+          placeholder="つぶやきを入力"></textarea>
       </div>
 
       <p class="
