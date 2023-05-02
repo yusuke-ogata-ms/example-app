@@ -1,6 +1,7 @@
 <button
   type="submit"
-  class="inline-flex
+  class="
+    inline-flex
     justify-center
     py-2
     px-4
@@ -11,11 +12,12 @@
     font-medium
     rounded-md
     text-white
-    bg-bule-500
+    bg-blue-500
     hpver:bg-blue-600
     focus:outline-none
     focus:ring-2
     focus:ring-offset-2
-    focus:ring-blue-500">
+    focus:ring-blue-500
+    ">
   {{ $slot }}
 </button>
