@@ -1,3 +1,7 @@
 #!/bin/sh
-bash vendor/bin/sail php "$@"
+# @echo off
+# sail php %#
+
+path=$(printf '%s\n' "${PWD##*/}")
+docker exec ${path}-laravel.test-1 php "$@"
 return $?
