@@ -59,6 +59,9 @@ class IndexController extends Controller
         // Service コンテナ化
         $tweets = $tweetService->getTweets();
 
+        // dump($tweets);
+        // app(\App\Exceptions\Handler::class)->render(request(), throw new \Error('dump report.'));
+
         return view('tweet.index')
             ->with('tweets', $tweets);
     }
