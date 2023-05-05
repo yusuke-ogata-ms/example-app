@@ -12,6 +12,8 @@ use Illuminate\Database\Seeder;
 // Factory を利用してシーディング
 use App\Models\Tweet;
 
+use App\Models\Image;
+
 class TweetsSeeder extends Seeder
 {
     /**
@@ -27,6 +29,10 @@ class TweetsSeeder extends Seeder
         // ]);
 
         // Factory を利用してシーディング
-        Tweet::factory()->count(10)->create();
+        Tweet::factory()->count(10)->create()->each(fn($tweet) =>
+            Image::factory()->count(4)->create()->each(fn($image) =>
+                $tweet->images()->attach($image->id)
+            )
+        );
     }
 }
